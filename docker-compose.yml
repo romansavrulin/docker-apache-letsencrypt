@@ -11,11 +11,11 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "apache-config:/etc/apache2"
-      - "letsencrypt-home:/etc/letsencrypt"
-      - "apache-log:/var/log/apache2"
+      - "config:/etc/apache2"
+      - "letsencrypt:/etc/letsencrypt"
+      - "log:/var/log/apache2"
 
 volumes:
-  apache-config:
-  letsencrypt-home:
-  apache-log:
+  config:
+  letsencrypt:
+  log:
