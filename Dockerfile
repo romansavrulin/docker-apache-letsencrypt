@@ -10,7 +10,7 @@ ENV STAGING ""
 
 # Base setup
 RUN apt-get -y update && \
-    apt-get install -q -y curl apache2 software-properties-common && \
+    apt-get install -q -y curl apache2 software-properties-common iproute2 gawk mime-support iputils-ping && \
     add-apt-repository ppa:certbot/certbot && \
     apt-get -y update && \
     apt-get install -q -y python-certbot-apache && \
