@@ -1,0 +1,21 @@
+version: '3'
+services:
+  httpd:
+    build: .
+    environment:
+      - DOMAINS
+      - WEBMASTER_MAIL
+      - WEBSERVER_HOSTNAME
+      - STAGING
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "apache-config:/etc/apache2"
+      - "letsencrypt-home:/etc/letsencrypt"
+      - "apache-log:/var/log/apache2"
+
+volumes:
+  apache-config:
+  letsencrypt-home:
+  apache-log:

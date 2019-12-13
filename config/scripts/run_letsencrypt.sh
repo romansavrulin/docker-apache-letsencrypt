@@ -1,5 +1,7 @@
 #!/bin/bash
-if (! [ -z "$STAGING" ]) then
+echo "STAGING: $STAGING"
+
+if [ -n "$STAGING" ]; then
   echo "Using Let's Encrypt Staging environment..."
   certbot -n --staging --expand --apache --agree-tos --email $WEBMASTER_MAIL "$@"
 else
