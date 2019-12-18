@@ -1,0 +1,18 @@
+sudo: required
+
+env:
+  IMAGE_NAME=romansavrulin/docker-apache-letsencrypt:latest
+
+services:
+  - docker
+
+script:
+  - docker build -t $IMAGE_NAME .
+
+after_success:
+  - set -e
+  - |
+    if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+      docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      docker push $IMAGE_NAME
+    fi

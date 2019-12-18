@@ -2,6 +2,7 @@ version: '3'
 services:
   httpd:
     build: .
+    restart: always
     environment:
       - DOMAINS
       - WEBMASTER_MAIL

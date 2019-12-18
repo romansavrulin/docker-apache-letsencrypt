@@ -1,5 +1,8 @@
 # Docker - Apache with Let's Encrypt
 
+[![Build Status](https://travis-ci.org/romansavrulin/docker-apache-letsencrypt.svg?branch=master)](https://travis-ci.org/romansavrulin/docker-apache-letsencrypt)
+[![Dockerhub link](https://img.shields.io/badge/hosted-dockerhub-22b8eb.svg)](https://hub.docker.com/r/romansavrulin/docker-apache-letsencrypt)
+
 This is a debian-based image which runs an apache and get's it SSL-certificates automatically from Let's Encrypt.
 
 ## Instructions
