@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.11
-MAINTAINER BirgerK <birger.kamp@gmail.com>
+MAINTAINER BirgerK <romansavrulin@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LETSENCRYPT_HOME /etc/letsencrypt
