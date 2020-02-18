@@ -15,8 +15,10 @@ services:
       - "config:/etc/apache2"
       - "letsencrypt:/etc/letsencrypt"
       - "log:/var/log/apache2"
+      - "public:/var/www/html"
 
 volumes:
   config:
   letsencrypt:
   log:
+  public:

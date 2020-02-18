@@ -43,4 +43,4 @@ CMD ["/sbin/my_init"]
 # Stuff
 EXPOSE 80
 EXPOSE 443
-VOLUME [ "/var/log/apache2", "$LETSENCRYPT_HOME", "/etc/apache2/" ]
+VOLUME [ "/var/log/apache2", "$LETSENCRYPT_HOME", "/etc/apache2/", "/var/www/html" ]
