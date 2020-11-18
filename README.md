@@ -18,8 +18,8 @@ There are some things you have to care about in your apache-config if you want t
 
 For an easy test-startup you just have to:
 
-```
-$ docker run -d --name apache-ssl romansavrulin/docker-apache-letsencrypt
+```bash
+docker run -d --name apache-ssl -p 80:80 -p 443:443 romansavrulin/docker-apache-letsencrypt
 ```
 
 Now you have locally an apache running, which gets it SSL-certificates from Let's Encrypt.
@@ -28,9 +28,9 @@ The image will get letsencrypt-certificates on first boot. A cron-job renews the
 
 If you want to expand your certificate and you can remove the existing docker-container and start new one with the updated `DOMAINS`-list. If you don't want to recreate the container you can execute the following commands:
 
-```
-$ UPDATED_DOMAINS="example.org,more.example.org"
-$ docker exec -it apache-ssl /run_letsencrypt.sh --domains $UPDATED_DOMAINS
+```bash
+UPDATED_DOMAINS="example.org,more.example.org"
+docker exec -it apache-ssl /run_letsencrypt.sh --domains $UPDATED_DOMAINS
 ```
 
 ### Configuring docker-container
